@@ -1,0 +1,6 @@
+[submodule "lib/DataFrame"]
+	path = lib/DataFrame
+	url = https://github.com/hosseinmoein/DataFrame.git
+[submodule "lib/mcts"]
+	path = lib/mcts
+	url = https://github.com/michaelbzms/MonteCarloTreeSearch.git
