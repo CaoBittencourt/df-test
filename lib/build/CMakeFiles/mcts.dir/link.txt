@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/Cao/github/df/lib/libmcts.a CMakeFiles/mcts.dir/mcts/mcts/src/JobScheduler.cpp.o CMakeFiles/mcts.dir/mcts/mcts/src/mcts.cpp.o
+/usr/bin/ranlib /home/Cao/github/df/lib/libmcts.a

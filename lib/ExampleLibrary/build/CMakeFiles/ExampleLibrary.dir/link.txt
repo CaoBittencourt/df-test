@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/Cao/github/df/lib/libExampleLibrary.a CMakeFiles/ExampleLibrary.dir/src/ExampleLibrary.cc.o
+/usr/bin/ranlib /home/Cao/github/df/lib/libExampleLibrary.a
