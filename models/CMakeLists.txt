@@ -36,19 +36,21 @@ target_include_directories(
   dfTestBin
   PRIVATE
   ${ROOT}
-  "${LIBRARIES}/DataFrame/include"
+
+  # ${LIBRARIES}
+  ${LIBRARIES}/DataFrame/include
 )
 
-# paths for statically-linked libraries
-target_link_directories(
-  dfTestBin
-  PRIVATE
-  ${LIBRARIES}
-)
+# # paths for statically-linked libraries
+# target_link_directories(
+# dfTestBin
+# PRIVATE
+# ${LIBRARIES}
+# )
 
-# add statically-linked libraries
-target_link_libraries(
-  dfTestBin
-  PRIVATE
-  DataFrame
-)
+# # add statically-linked libraries
+# target_link_libraries(
+# dfTestBin
+# PRIVATE
+# DataFrame
+# )
