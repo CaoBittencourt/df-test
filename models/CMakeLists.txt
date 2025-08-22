@@ -21,7 +21,8 @@ set(libInc ${LIBRARIES})
 add_executable(
   dfTestBin
   ${dfTest}
-  "${LIBRARIES}/DataFrame.h"
+
+  # "${LIBRARIES}/DataFrame.h"
 )
 set_property(
   TARGET
@@ -31,26 +32,43 @@ set_property(
   "df"
 )
 
+add_library(
+  libDataFrame
+  INTERFACE
+  ${LIBRARIES}/DataFrame/include/DataFrame/DataFrame.h
+  ${LIBRARIES}/DataFrame/include/DataFrame/DataFrameExports.h
+  ${LIBRARIES}/DataFrame/include/DataFrame/DataFrameFinancialVisitors.h
+  ${LIBRARIES}/DataFrame/include/DataFrame/DataFrameMLVisitors.h
+  ${LIBRARIES}/DataFrame/include/DataFrame/DataFrameOperators.h
+  ${LIBRARIES}/DataFrame/include/DataFrame/DataFrameStatsVisitors.h
+  ${LIBRARIES}/DataFrame/include/DataFrame/DataFrameTransformVisitors.h
+  ${LIBRARIES}/DataFrame/include/DataFrame/DataFrameTypes.h
+  ${LIBRARIES}/DataFrame/include/DataFrame/RandGen.h
+)
+
 # add include directories
+target_include_directories(
+  libDataFrame
+  INTERFACE
+  ${LIBRARIES}/DataFrame/include
+)
+
 target_include_directories(
   dfTestBin
   PRIVATE
   ${ROOT}
-
-  # ${LIBRARIES}
-  ${LIBRARIES}/DataFrame/include
 )
 
-# # paths for statically-linked libraries
-# target_link_directories(
-# dfTestBin
-# PRIVATE
-# ${LIBRARIES}
-# )
+# paths for statically-linked libraries
+target_link_directories(
+  dfTestBin
+  PRIVATE
+  ${LIBRARIES}
+)
 
-# # add statically-linked libraries
-# target_link_libraries(
-# dfTestBin
-# PRIVATE
-# DataFrame
-# )
+# add statically-linked libraries
+target_link_libraries(
+  dfTestBin
+  PRIVATE
+  libDataFrame
+)
